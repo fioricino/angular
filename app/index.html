@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="news">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="libs/style.css">
+    <script type="text/javascript" src="libs/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title></title>
+</head>
+<body ng-controller="NewsController as newsController">
+    <section>
+        <ul class="nav nav-pills">
+            <li ng-class="{'font-weight-bold': newsController.isSelected('World')}"><a href ng-click="newsController.selectTopic('World')">World</a></li>
+            <li ng-class="{'font-weight-bold': newsController.isSelected('Sport')}"><a href ng-click="newsController.selectTopic('Sport')">Sport</a></li>
+            <li ng-class="{'font-weight-bold': newsController.isSelected('Weather')}"><a href ng-click="newsController.selectTopic('Weather')">Weather</a></li>
+        </ul>
+       <news-container></news-container>
+        <!--<div class="panel" ng-show="false">-->
+            <!--<h4>Reviews</h4>-->
+            <!--<blockquote ng-repeat="review in store.product.reviews">-->
+                <!--<b>Stars: {{review.stars}}</b>-->
+                <!--{{review.body}}-->
+                <!--<cite>by: {{review.author}}</cite>-->
+            <!--</blockquote>-->
+            <!--<form name="reviewForm" ng-controller="ReviewController as rew"-->
+                  <!--ng-submit="reviewForm.$valid && rew.addReview(store.product)"-->
+                  <!--novalidate>-->
+                <!--<blockquote>-->
+                    <!--<b>Stars: {{rew.review.stars}}</b>-->
+                    <!--{{rew.review.body}}-->
+                    <!--<cite>by: {{rew.review.author}}</cite>-->
+                <!--</blockquote>-->
+            <!--<select ng-model="rew.review.stars" required>-->
+                    <!--<option value="1">1 Star</option>-->
+                    <!--<option value="2">2 Stars</option>-->
+                    <!--<option value="3">3 Stars</option>-->
+                    <!--<option value="4">4 Stars</option>-->
+                    <!--<option value="5">5 Stars</option>-->
+                <!--</select>-->
+                <!--<textarea ng-model="rew.review.body" required></textarea>-->
+                <!--<input type="email" ng-model="rew.review.author"/>-->
+                <!--<div>reviewForm is {{reviewForm.$valid}}</div>-->
+                <!--<input type="submit" value="Submit"/>-->
+            <!--</form>-->
+        <!--</div>-->
+    </section>
+
+</body>
+</html>

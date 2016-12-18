@@ -1,0 +1,9 @@
+<div class="panel">
+    <h2>{{newsController.currentTopic}} News</h2>
+    <div ng-repeat="nnew in newsController.filteredNews" ng-show="newsController.selectedNew == null">
+        <news-preview></news-preview>
+    </div>
+    <div ng-show="newsController.selectedNew != null">
+        <news-full></news-full>
+    </div>
+</div>
