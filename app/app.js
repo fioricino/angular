@@ -1,12 +1,5 @@
 var app = angular.module('news', []);
 
-//app.directive("productDescription", function() {
-//    return {
-//        restrict: 'E',
-//        templateUrl: 'news-container.html'
-//    };
-//});
-
 app.controller('NewsController', [function() {
     this.currentTopic = 'World';
     this.selectedNew = null;
@@ -51,7 +44,7 @@ app.controller('NewsController', [function() {
             topic: "World",
             header: "Another world news",
             text: "This is another world news",
-            summary: "This is another world summary",
+            summary: "This is another world summary"
         },
         {
             topic: "Sport",
@@ -94,12 +87,20 @@ app.directive("newsFull", function() {
         templateUrl: 'news-full.html'
     };
 });
-//app.controller("CommentController", [function() {
-//    this.comment = {};
-//
-//    this.addComment = function(news) {
-//        news.comments.push(this.comment);
-//        this.comment = {};
-//    };
-//}]);
+
+app.directive("commentInput", function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'comment-input.html'
+    };
+});
+
+app.controller("CommentController", [function() {
+    this.comment = {};
+
+    this.addComment = function(news) {
+        news.comments.push(this.comment);
+        this.comment = {};
+    };
+}]);
 

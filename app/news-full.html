@@ -1,3 +1,11 @@
-<h4>{{newsController.selectedNew.header}}</h4>
+<h2>{{newsController.selectedNew.header}}</h2>
 <p>{{newsController.selectedNew.text}}</p>
 <a href ng-click="newsController.selectNews(null)">Back</a>
+<div class="panel">
+<h3>Comments</h3>
+<blockquote ng-repeat="comment in newsController.selectedNew.comments">
+{{comment.text}}
+<cite>by: {{comment.author}}</cite>
+</blockquote>
+    <comment-input></comment-input>
+</div>
