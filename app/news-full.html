@@ -1,11 +1,14 @@
-<h2>{{newsController.selectedNew.header}}</h2>
-<p>{{newsController.selectedNew.text}}</p>
-<a href ng-click="newsController.selectNews(null)">Back</a>
-<div class="panel">
-<h3>Comments</h3>
-<blockquote ng-repeat="comment in newsController.selectedNew.comments">
-{{comment.text}}
-<cite>by: {{comment.author}}</cite>
-</blockquote>
-    <comment-input></comment-input>
+<div class="panel-group">
+    <div class="panel panel-primary">
+        <h3>{{newsController.selectedNew.header}}</h3>
+        <a href ng-click="newsController.selectNews(null)">Back</a>
+        <p>{{newsController.selectedNew.text}}</p>
+    </div>
+    <div class="panel panel-info">
+        <h4>Comments</h4>
+       <div ng-repeat="comment in newsController.selectedNew.comments">
+           <comment></comment>
+       </div>
+        <comment-input></comment-input>
+    </div>
 </div>

@@ -1,11 +1,20 @@
 <form name="commentForm" ng-controller="CommentController as commentController"
       ng-submit="commentForm.$valid && commentController.addComment(newsController.selectedNew)"
       novalidate>
-    <blockquote>
-        {{commentController.comment.text}}
-        <cite>by: {{commentController.comment.author}}</cite>
-    </blockquote>
-    <textarea ng-model="commentController.comment.text" required></textarea>
-    <input type="email" ng-model="commentController.comment.author"/>
-    <input type="submit" value="Submit"/>
+    <div class="form-group">
+        <label>Enter your comment: </label>
+        <textarea class="form-control" ng-model="comment.text" required></textarea>
+    </div>
+    <div class="form-group">
+        <label>Email: </label>
+        <input  class="form-control" type="email" ng-model="comment.author"/>
+    </div>
+    <div class="form-group">
+            <input class="btn btn-default" type="submit" value="Submit"/>
+    </div>
+
+    <div class="panel panel-default" ng-model="commentController">
+        <h4>Preview:</h4>
+        <comment></comment>
+    </div>
 </form>

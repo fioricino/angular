@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html ng-app="news">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="libs/style.css">
     <script type="text/javascript" src="libs/angular.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="news.js"></script>
     <title></title>
 </head>
-<body ng-controller="NewsController as newsController">
+<body ng-controller="NewsController as newsController" class="main">
     <section>
         <ul class="nav nav-pills">
-            <li ng-class="{'font-weight-bold': newsController.isSelected('World')}"><a href ng-click="newsController.selectTopic('World')">World</a></li>
-            <li ng-class="{'font-weight-bold': newsController.isSelected('Sport')}"><a href ng-click="newsController.selectTopic('Sport')">Sport</a></li>
-            <li ng-class="{'font-weight-bold': newsController.isSelected('Weather')}"><a href ng-click="newsController.selectTopic('Weather')">Weather</a></li>
+            <li ng-class="{'active': newsController.isSelected('World')}"><a href ng-click="newsController.selectTopic('World')">World</a></li>
+            <li ng-class="{'active': newsController.isSelected('Sport')}"><a href ng-click="newsController.selectTopic('Sport')">Sport</a></li>
+            <li ng-class="{'active': newsController.isSelected('Weather')}"><a href ng-click="newsController.selectTopic('Weather')">Weather</a></li>
         </ul>
        <news-container></news-container>
 
     </section>
+
 
 </body>
 </html>
