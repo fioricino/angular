@@ -1,7 +1,8 @@
 <div class="panel-group">
     <div class="panel panel-primary">
-        <h3>{{newsController.selectedNew.header}}</h3>
         <a href ng-click="newsController.selectNews(null)">Back</a>
+        <h3>{{newsController.selectedNew.header}}</h3>
+        <img class="img-rounded" alt="{{image}}" width="340" ng-src="./images/{{newsController.selectedNew.image}}">
         <p>{{newsController.selectedNew.text}}</p>
     </div>
     <div class="panel panel-info">
