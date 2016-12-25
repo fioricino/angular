@@ -1,7 +1,17 @@
 (function() {
     var app = angular.module('news', ['directives']);
 
-app.controller('NewsController', [function() {
+    app.service('newsService', function() {
+        this.getTopics = function() {
+            return topics;
+        };
+
+        this.getNews = function() {
+            return news;
+        }
+    });
+
+app.controller('NewsController', function(newsService) {
     this.currentTopic = 'World';
     this.selectedNew = null;
 
@@ -9,7 +19,8 @@ app.controller('NewsController', [function() {
         return this.currentTopic == topic;
     };
 
-    this.news = data;
+    this.news = newsService.getNews();
+    this.topics = newsService.getTopics();
 
     this.selectTopic = function(topic) {
         this.currentTopic = topic;
@@ -18,12 +29,12 @@ app.controller('NewsController', [function() {
         });
     };
 
-    this.selectTopic("World");
+    this.selectTopic(topics[0]);
 
     this.selectNews = function(nnew) {
         this.selectedNew = nnew;
     };
-}]);
+});
 
 
 app.controller("CommentController", [function() {
@@ -34,5 +45,6 @@ app.controller("CommentController", [function() {
         this.comment = {};
     };
 }]);
+
 
 })();

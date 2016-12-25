@@ -13,9 +13,9 @@
 <body ng-controller="NewsController as newsController" class="main">
     <section>
         <ul class="nav nav-pills">
-            <li ng-class="{'active': newsController.isSelected('World')}"><a href ng-click="newsController.selectTopic('World')">World</a></li>
-            <li ng-class="{'active': newsController.isSelected('Sport')}"><a href ng-click="newsController.selectTopic('Sport')">Sport</a></li>
-            <li ng-class="{'active': newsController.isSelected('Weather')}"><a href ng-click="newsController.selectTopic('Weather')">Weather</a></li>
+            <li ng-repeat="topic in newsController.topics" ng-class="{'active': newsController.isSelected(topic)}"><a href ng-click="newsController.selectTopic(topic)">{{topic}}</a></li>
+            <!--<li ng-class="{'active': newsController.isSelected('Sport')}"><a href ng-click="newsController.selectTopic('Sport')">Sport</a></li>-->
+            <!--<li ng-class="{'active': newsController.isSelected('Weather')}"><a href ng-click="newsController.selectTopic('Weather')">Weather</a></li>-->
         </ul>
        <news-container></news-container>
 
